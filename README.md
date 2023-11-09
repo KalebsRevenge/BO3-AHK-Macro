@@ -5,3 +5,8 @@ Anyway i gobbled most of this directly from a reddit post https://www.reddit.com
 anyone has any funny ideas i will happily add them into this
 
 8 minutes later i found a cool autofire LMB script here https://www.autohotkey.com/boards/viewtopic.php?t=57018 so i just ate that too cause funny
+https://www.autohotkey.com/
+F8- toggle slides
+f9- toggle rapid fire
+f10- uhoh button in case of odd script behaviour because i suck at this
+This assumes you have X as a change weapon key

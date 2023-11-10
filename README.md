@@ -6,6 +6,7 @@ anyone has any funny ideas i will happily add them into this
 
 8 minutes later i found a cool autofire LMB script here https://www.autohotkey.com/boards/viewtopic.php?t=57018 so i just ate that too cause funny
 https://www.autohotkey.com/
+f7- toggle quicscoping on RMB
 F8- toggle slides
 f9- toggle rapid fire
 f10- uhoh button in case of odd script behaviour because i suck at this

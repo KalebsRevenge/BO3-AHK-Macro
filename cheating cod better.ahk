@@ -1,16 +1,13 @@
 #SingleInstance, Force
-Toggle2 := 0
-Toggle1 := 0 ; Starting Mode = OFF
+Toggle1 := 0
+Toggle2 := 0 ; Starting Mode = OFF
 Toggle3 := 0 ; Starting Mode = OFF
 F10::Suspend                      ;if it fucks up unfuck it . . . maybe xx xx xx xx xxs xx
-F8::
-	Toggle2 := !Toggle2
-F9::
-	Toggle1 := !Toggle1
-#If, (Toggle2 = 1)
-
-F7::
-	Toggle3 := !Toggle3
+F8::Toggle1 := !Toggle1
+F9::Toggle2 := !Toggle2
+F7::Toggle3 := !Toggle3
+{  #If, (Toggle1 = 1)
+	}
 *Space::                          ;Trigger key
   While GetKeyState("Space","P"){ ;  If 'Trigger key' held...
 	
@@ -30,7 +27,8 @@ Return                            ;End code block
   }                               ;  End If block
 Return                            ;End code block
 
-#If, (Toggle1 = 1)
+{  #If, (Toggle2 = 1)
+	}
 	LButton::
 		While(GetKeyState("LButton", "P")) {
 			SendInput, {Blind}{LButton}

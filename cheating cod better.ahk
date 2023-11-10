@@ -1,14 +1,15 @@
 #SingleInstance, Force
 Toggle2 := 0
 Toggle1 := 0 ; Starting Mode = OFF
+Toggle3 := 0 ; Starting Mode = OFF
 F10::Suspend                      ;if it fucks up unfuck it . . . maybe xx xx xx xx xxs xx
 F8::
 	Toggle2 := !Toggle2
 F9::
 	Toggle1 := !Toggle1
 #If, (Toggle2 = 1)
-Toggle3 := 0 ; Starting Mode = OFF
-F8::
+
+F7::
 	Toggle3 := !Toggle3
 *Space::                          ;Trigger key
   While GetKeyState("Space","P"){ ;  If 'Trigger key' held...

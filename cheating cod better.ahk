@@ -1,19 +1,23 @@
 #SingleInstance, Force
-Toggle2 := 1
+Toggle2 := 0
 Toggle1 := 0 ; Starting Mode = OFF
-F10::Suspend                      ;Toggle 'Trigger key' off/on
+F10::Suspend                      ;if it fucks up unfuck it . . . maybe xx xx xx xx xxs xx
 F8::
 	Toggle2 := !Toggle2
 F9::
 	Toggle1 := !Toggle1
 #If, (Toggle2 = 1)
+Toggle3 := 0 ; Starting Mode = OFF
+F8::
+	Toggle3 := !Toggle3
 *Space::                          ;Trigger key
   While GetKeyState("Space","P"){ ;  If 'Trigger key' held...
 	
 	Send {Shift}			      ;    Press 'Shift'
     Send {Space}                  ;    Press 'Space'
-	Sleep 100                     ;    Don't spam the system 
+	Sleep 250                     ;    Don't spam the system 
   }                               ;  End If block
+
 Return                            ;End code block
 *LControl::                         ;Trigger key
   While GetKeyState("LControl","P"){ ;  If 'Trigger key' held...
@@ -21,7 +25,7 @@ Return                            ;End code block
     Send {Space}                  ;    Press 'Space'
 	Send {x}					  ;    Press 'x'  
 	Send {x}					  ;    Press 'x'
-	Sleep 100                     ;    Don't spam the system
+	Sleep 250                     ;    Don't spam the system
   }                               ;  End If block
 Return                            ;End code block
 
@@ -34,6 +38,21 @@ Return                            ;End code block
 	return
 
 
+{  #If, (Toggle3 = 1)
+	}
+	*Rbutton::
+
+		While(GetKeyState("RButton", "P")) {
+
+
+    {
+      Send {RButton Down}
+      Sleep 400
+      MouseClick,left
+      Send {RButton Up}
+	  Send {XButton1}
+   }
+}
 
 ;annoyingly bulk of this code was actually from reddit i had been working on something to do this for a few days thought i would ;share the original source in the code for recognition https://www.reddit.com/r/AutoHotkey/comments/x211ik/toggle_space_bar_spam/
 ;added autofire on a toggle scavanged from https://www.autohotkey.com/boards/viewtopic.php?t=57018
